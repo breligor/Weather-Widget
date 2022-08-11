@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<2293ecac-cbf0-4d0a-861a-1408afe920b5>&load=package.full&lang=ru-RU"
+            type="text/javascript"></script>
+</head>
+<body>
+<div class="app">
+    <div class="weather">
+        <div class="firstBlock">
+            <p class="pressure"></p>
+            <p class="humidity"></p>
+            <p class="feelslike"></p>
+            <p class="wind"></p>
+            <p class="clouds"></p>
+            <div class="img"></div>
+            <button class="detailedWeather">show more</button>
+        </div>
+        <div class="secondBlock">
+            <div class="city-name">Gomel</div>
+            <div class="temperature"></div>
+        </div>
+    </div>
+    <div class="thirdBlock">
+        <div class="date"></div>
+        <div class="newCityBlock">
+            <input type="text" value="" class="input" placeholder="your city name">
+            <button class="btn2">GO</button>
+        </div>
+    </div>
+    <div id="weekForecast" class="forecast hidden"></div>
+    <div class="quote">
+        <p id="quote"></p>
+        <i id="author"></i>
+    </div>
+</div>
+<div id="map"></div>
+
+<script src="app.js"></script>
+<script type="text/javascript"
+        src="https://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;jsonp=parseQuote"></script> <!--цитата API-->
+</body>
+</html>
