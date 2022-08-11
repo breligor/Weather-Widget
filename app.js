@@ -54,7 +54,7 @@ function setTypeAndPan(lat, lon) {
 
 // функция для поиска и отображения погоды по введенному городу и показа его на карте
 const findMyWeather = () => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input.value}&lang=en&units=metric&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&lang=en&units=metric&appid=${apiKey}`)
         .then(function (resp) {
             return resp.json()
         })
@@ -98,7 +98,7 @@ const findMyState = () => {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
 
-        const geoApiReverse = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=2&appid=${apiKey}`;
+        const geoApiReverse = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=2&appid=${apiKey}`;
         fetch(geoApiReverse)
             .then(res => res.json())
             .then(data => {
@@ -106,7 +106,7 @@ const findMyState = () => {
                 return data;
             })
             .then(data => {
-                fetch(`http://api.openweathermap.org/data/2.5/weather?q=${data[0].name}&lang=en&units=metric&appid=${apiKey}`)
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data[0].name}&lang=en&units=metric&appid=${apiKey}`)
                     .then(function (resp) {
                         return resp.json()
                     })
@@ -172,7 +172,7 @@ getWeeklyForecast(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName
             weeklyForecast.insertAdjacentHTML('beforeend', `
         <div class="day">
         <h3>${days}</h3>
-        <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" />
+        <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" />
         <div class="description">${day.weather[0].description}</div>
         <div class="temp">
           <span class="high">${max.pop().toFixed(0)}℃</span>/<span class="low">${min.pop().toFixed(0)}℃</span>
